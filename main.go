@@ -53,6 +53,8 @@ func main() {
 
 		c.Set("Content-Type", fiber.MIMEApplicationJSON)
 
+		response = []Response{}
+
 		rows, err := db.Query("SELECT * FROM public.item ORDER BY id ASC LIMIT 100")
 		if err != nil {
 			log.Fatal(err)
